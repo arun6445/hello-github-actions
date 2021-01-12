@@ -14,7 +14,7 @@ jobs:
 
       - name: Set the environment variable
         env: 
-          access_id: ${{ secrets.DEV_AWS_SECRET_ACCESS_ID }}
+          access_id: ${{ secrets.{EnvType}_AWS_SECRET_ACCESS_ID }}
         run: |
           temp=`echo ${access_id}`
           echo $temp
