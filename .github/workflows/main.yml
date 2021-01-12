@@ -1,5 +1,7 @@
 name: A workflow for my Hello World file
 on: push
+env:
+  EnvType: DEV
 jobs:
   build:
     name: Hello world action
@@ -9,3 +11,9 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona" 
+
+    name: Set the environment variable
+    env: 
+      access_id: {{ secrets.${EnvType}_AWS_SECRET_ACCESS_ID }}
+      run: |
+        echo ${access_id}
