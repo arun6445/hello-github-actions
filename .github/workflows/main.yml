@@ -13,7 +13,7 @@ jobs:
           MY_NAME: "Mona" 
 
       - name: Set the environment variable
-      - env: 
+        env: 
           access_id: {{ secrets.${EnvType}_AWS_SECRET_ACCESS_ID }}
         run: |
           echo ${access_id}
