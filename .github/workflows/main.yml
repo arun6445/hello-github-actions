@@ -16,4 +16,5 @@ jobs:
         env: 
           access_id: ${{ secrets.DEV_AWS_SECRET_ACCESS_ID }}
         run: |
-          echo ${access_id}
+          temp=`echo ${access_id}`
+          echo $temp
